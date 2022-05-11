@@ -1,8 +1,8 @@
 <template>
   <div class="hero">
     <div class="hero-block">
-      <h1 class="title invisible one">Just a small town boy...</h1>
-      <h1 class="title invisible two">&nbsp;doin' his best to get employed.</h1>
+      <p class="title invisible one">Just a small town boy...</p>
+      <p class="title invisible two">&nbsp;doin' his best to get employed.</p>
     </div>
   </div>
 </template>
@@ -25,29 +25,24 @@ export default {
 .hero {
   display: flex;
   justify-content: center;
-  margin-bottom: -8em;
   height: 72vh;
   max-height: 100%;
+  margin-bottom: -6em;
 }
 
 .hero-block {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-self: center;
+  max-height: 24%;
 }
 
 .title {
   font-weight: 200;
   color: $green;
-}
-@media (max-width: 900px) {
-  .title {
-    font-size: 24px;
-  }
-  .title.two {
-    margin-top: -8em;
-  }
+  font-size: 2em;
+  margin-top: 0px;
 }
 
 //ANIMATION
