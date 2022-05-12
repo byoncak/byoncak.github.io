@@ -1,12 +1,10 @@
 const { defineConfig } = require("@vue/cli-service");
 module.exports = defineConfig({
   pages: {
-    index: {
-      entry: "src/main.js",
-      template: "src/index.html",
-      filename: "index.html",
-    },
+    index: path.resolve(__dirname, "../docs/index.html"),
+    assetsRoot: path.resolve(__dirname, "../docs"),
+    assetsPublicPath: "",
   },
   transpileDependencies: true,
-  publicPath: "/",
+  publicPath: "",
 });
