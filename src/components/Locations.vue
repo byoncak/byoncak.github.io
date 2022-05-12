@@ -5,12 +5,7 @@
         <img class="icon" src="@/assets/location-crosshairs-solid.svg" />
         <h2>Home Location</h2>
       </div>
-      <div class="current location">
-        <img class="icon" src="@/assets/location-crosshairs-solid.svg" />
-        <h2>Current Location</h2>
-      </div>
-    </div>
-  </div>
+  </div>a
 </template>
 
 <script>
