@@ -4,7 +4,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "publish": "npm run build && rm -rf docs; cp -r dist docs && sed -i -e 's/src=\\ //src=/g' docs/index.html ; sed -i -e 's/href=\\//href=/g' docs/index.html",
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
@@ -47,7 +48,6 @@
     },
     "rules": {}
   },
-  "publish": "npm run build && rm -rf docs; cp -r dist docs && sed -i -e 's/src=\\ //src=/g' docs/index.html ; sed -i -e 's/href=\\//href=/g' docs/index.html",
   "browserslist": [
     "> 1%",
     "last 2 versions",
