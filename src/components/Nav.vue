@@ -1,10 +1,43 @@
 <template>
   <div class="nav-container">
-    <div class="nav">
-      <div class="connect button" @click="showSocials()">
-        <div class="svg-wrapper">
-          <img class="icon" src="@/assets/heart-solid.svg" />
+    <div class="socials" v-show="showSocials">
+      <div class="modal-container">
+        <div class="modal-header">
+          <button class="close-button" @click="showSocials = !showSocials">
+            X
+          </button>
+          <p class="modal-description">Connect With Me:</p>
         </div>
+        <div class="modal-options">
+          <img class="icon" src="@/assets/linkedin-brands.svg" />
+        </div>
+      </div>
+    </div>
+    <div class="nav">
+      <div class="connect-with-me">
+        <div
+          class="connect button"
+          @click="
+            {
+              showSocials = !showSocials;
+            }
+          "
+          @mouseover="
+            {
+              connect = !connect;
+            }
+          "
+          @mouseleave="
+            {
+              connect = !connect;
+            }
+          "
+        >
+          <div class="svg-wrapper">
+            <img class="icon" src="@/assets/heart-solid.svg" />
+          </div>
+        </div>
+        <div v-show="connect" class="icon-title">Connect</div>
       </div>
 
       <div class="skills button" :class="button">
@@ -19,7 +52,20 @@
         </div>
       </div>
 
-      <div class="contact button" :class="button">
+      <div
+        class="contact button"
+        :class="button"
+        @mouseover="
+          {
+            connect = !connect;
+          }
+        "
+        @mouseleave="
+          {
+            connect = !connect;
+          }
+        "
+      >
         <div class="svg-wrapper">
           <img class="icon" src="@/assets/address-card-solid.svg" />
         </div>
@@ -31,11 +77,67 @@
 <script>
 export default {
   name: "NavBlock",
+  data() {
+    return {
+      showSocials: false,
+      connect: false,
+    };
+  },
 };
 </script>
 
 <style scoped lang="scss">
 @import "@/global-styles/colors.sass";
+
+.socials {
+  position: relative;
+  justify-content: center;
+}
+
+.modal-container {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  margin: 0px auto;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 16px;
+  border-radius: 2px;
+  background: #0e0f0e;
+  box-shadow: 0 2px 8px rgba(#73d393, 0.48);
+  display: flex;
+  transition: all 0.3s ease;
+  margin-top: -7.2em;
+  z-index: 2;
+}
+.modal-header {
+  display: inline-flex;
+  color: $green;
+  margin-bottom: 8px;
+  align-items: center;
+  justify-content: flex-start;
+}
+.close-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 16px;
+  width: 16px;
+  margin-right: 16px;
+  background-color: transparent;
+  color: #73d393;
+  cursor: pointer;
+}
+
+.modal-description {
+  display: flex;
+  justify-content: center;
+}
+
+.modal-options {
+  display: flex;
+}
 
 .locations {
   display: flex;
@@ -81,6 +183,7 @@ img.icon {
 
 .button {
   padding: 24px;
+  flex-direction: column;
   align-items: center;
   display: inline-flex;
   color: $green;
@@ -95,6 +198,9 @@ img.icon {
   height: 2em;
 }
 
+.icon-title {
+  color: $green;
+}
 .button:hover {
   margin-top: -24px;
   transition: margin 0.3s ease-in-out;
