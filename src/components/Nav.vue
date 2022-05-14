@@ -22,7 +22,7 @@
               showSocials = !showSocials;
             }
           "
-          @mouseover="
+          @mouseenter="
             {
               connect = !connect;
             }
@@ -36,8 +36,8 @@
           <div class="svg-wrapper">
             <img class="icon" src="@/assets/heart-solid.svg" />
           </div>
+          <div v-show="connect" class="icon-title">Connect</div>
         </div>
-        <div v-show="connect" class="icon-title">Connect</div>
       </div>
 
       <div class="skills button" :class="button">
@@ -52,20 +52,7 @@
         </div>
       </div>
 
-      <div
-        class="contact button"
-        :class="button"
-        @mouseover="
-          {
-            connect = !connect;
-          }
-        "
-        @mouseleave="
-          {
-            connect = !connect;
-          }
-        "
-      >
+      <div class="contact button" :class="button">
         <div class="svg-wrapper">
           <img class="icon" src="@/assets/address-card-solid.svg" />
         </div>
@@ -199,7 +186,11 @@ img.icon {
 }
 
 .icon-title {
+  display: flex;
   color: $green;
+  margin-top: 0.4em;
+  max-width: 2em;
+  justify-content: center;
 }
 .button:hover {
   margin-top: -24px;
