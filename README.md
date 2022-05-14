@@ -1,2 +1,0 @@
-# byoncak.github.io
-theCore
