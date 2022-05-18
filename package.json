@@ -1,10 +1,10 @@
 {
+  "name": "my-calling-card",
   "version": "0.1.0",
-  "private": true,
+  "main": "index.html",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "deploy": "node scripts/gh-pages-deploy.js",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
